@@ -10,7 +10,13 @@ def format_8(list_8):
         print(message)
     return(None)
 
+def convert(string):
+    list_1 = string.split("-")
+    return(list_1)
+
+
 print("Welcome to Deck 'Em, a solitaire-style boxing game. Check it out on the App Store! ")
+print("")
 
 avatar = 21
 
@@ -35,6 +41,16 @@ for i in range (0, 10):
 
 shuffle_list = total_list
 random.shuffle(shuffle_list)
-print(shuffle_list)
 
+show_list = []
+round_list = []
+
+for i in range (0, 4):
+    x = shuffle_list[i]
+    round_list.append(x)
+    x = convert(x)
+    show_list.append(x)
+
+print(round_list)
+print(show_list)
             
