@@ -1,3 +1,5 @@
+import random
+
 def format_8(list_8):
     for i in range (0, 2):
         message = ""
@@ -31,5 +33,8 @@ for i in range (0, 10):
     value = punches[i]
     total_list.append(value)
 
+shuffle_list = total_list
+random.shuffle(shuffle_list)
+print(shuffle_list)
 
             
