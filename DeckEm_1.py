@@ -48,12 +48,20 @@ def convert(string):
     return(new_string)
 
 def update(pos_1, pos_2, list_1):
-    update_list = []
-    for i in range (0, 8):
-        update_list.append(0)
     
-    val_1 = list_1[pos_1]
-    val_2 = list_1[pos_2]
+    str_val_1 = list_1[pos_1]
+    val_1 = str_value_1.split("-")
+    str_val_2 = list_1[pos_2]
+    val_2 = str_value_2.split("-")
+
+    if val_1[0] == "0":
+        return(None)
+    elif val_2[0] == "0":
+        if 
+        list_1[pos_1] = "0-v"
+        list_1[pos_2] = str_val_1
+        
+        
 
 
     
