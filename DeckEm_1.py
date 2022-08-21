@@ -72,7 +72,22 @@ def update(pos_1, pos_2, list_1):
         elif first_val[1] == "k" and second_val[1] == "Corner":
             list_1[pos_2] = str_val_1
             list_1[pos_1] = "0-v"
-        
+        else:
+            return(None)
+    else:
+        if first_val[1] == second_val[1]:
+            list_1[pos_2] = str_val_1
+            list_1[pos_1] = "0-v"
+        elif first_val[1] == "c" and second_val[1] == "a":
+            health = second_val[0] - first_val[0]
+            string = "%s-a" % health
+            list_1[pos_2] = string
+            list_1[pos_1] = "0-v"
+        elif first_val[1] == "k" and second_val[1] == "a":
+            health = second_val[0] + first_val[0]
+            string = "%s-a" % health
+            list_1[pos_2] = string
+            list_1[pos_1] = "0-v"
         
         
 
