@@ -57,10 +57,21 @@ def update(pos_1, pos_2, list_1):
     if val_1[0] == "0":
         return(None)
     elif val_2[0] == "0":
-        if first_val[1] == "b" and second_val[1] = "Block"
+        if first_val[1] == "b" and second_val[1] == "Block":
             list_1[pos_2] = str_val_1
             list_1[pos_1] = "0-v"
-        elif
+        elif first_val[1] = "b" and second_val[1] == "Corner":
+            list_1[pos_2] = str_val_1
+            list_1[pos_1] = "0-v"
+        elif first_val[1] == "p" and second_val[1] == "Punch":
+            list_1[pos_2] = str_val_1
+            list_1[pos_1] = "0-v"
+        elif first_val[1] == "p" and second_val[1] == "Corner":
+            list_1[pos_2] = str_val_1
+            list_1[pos_1] = "0-v"
+        elif first_val[1] == "k" and second_val[1] == "Corner":
+            list_1[pos_2] = str_val_1
+            list_1[pos_1] = "0-v"
         
         
         
