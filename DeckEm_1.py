@@ -14,6 +14,7 @@ def convert(string):
     list_1 = string.split("-")
     num = int(list_1[0])
     card_type = list_1[1]
+    bypass = False
     if card_type == "b":
         card_type = "Block"
     elif card_type == "c":
@@ -29,13 +30,20 @@ def convert(string):
             card_type = "Sucker"
         else:
             print("Something went wrong.")
+    elif card_type == "a":
+        card_type = "Avatar"
+    elif card_type == "v":
+        new_string = "Vacant"
     else:
-        print("Something went wrong")
+        new_string = "%s" % card_type
+        bypass = True
 
-    if card_type != "Sucker":
+    if card_type != "Sucker" and card_type != "v" and bypass == False:
         new_string = "%s - %s" % (card_type, num)
-    else:
+    elif card_type == "Sucker" and bypass == False:
         new_string = "Sucker"
+    else:
+        toggle = True
 
     return(new_string)
 
@@ -44,14 +52,9 @@ def update(pos_1, pos_2, list_1):
     for i in range (0, 8):
         update_list.append(0)
     
-    value_1 = list_1[pos_1]
-    value_1 = value_1.split("-")
-    value_2 = list_1[pos_2]
-    value_2 = value_2.split("-")
+    val_1 = list_1[pos_1]
+    val_2 = list_1[pos_2]
 
-    if value_1 = "None":
-        print(None)
-    
 
     
     
@@ -65,6 +68,7 @@ blocks = ["2-b", "3-b", "4-b", "5-b", "5-b", "6-b", "6-b", "7-b", "7-b", "8-b", 
 champs = ["2-c", "3-c", "4-c", "5-c", "6-c", "7-c", "7-c", "8-c", "8-c", "9-c", "9-c", "10-c", "10-c", "11-c", "12-c", "13-c", "14-c", "15-c"] # 18 total
 kits = ["2-k", "3-k", "4-k", "5-k", "5-k", "6-k", "6-k", "7-k", "7-k", "8-k", "9-k", "10-k"] # 12 total
 punches = ["3-p", "3-p", "3-p", "3-p", "3-p", "5-p", "5-p", "5-p", "15-p", "15-p"] # 10 total
+# Vacant spots are represented by '0-v'
 
 total_list = []
 for i in range (0, 12):
@@ -89,12 +93,16 @@ round_list = []
 for i in range (0, 4):
     x = shuffle_list[i]
     round_list.append(x)
+
+round_list.append("0-Punch")
+round_list.append("21-a")
+round_list.append("0-Block")
+round_list.append("0-Corner")
+
+for i in range (0, 8):
+    x = round_list[i]
     x = convert(x)
     show_list.append(x)
-
-round_list.append(0)
-round_list.append(0)
-round_list.append("21-a")
 
 print(round_list)
 print(show_list)
