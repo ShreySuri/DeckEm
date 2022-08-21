@@ -12,8 +12,49 @@ def format_8(list_8):
 
 def convert(string):
     list_1 = string.split("-")
-    return(list_1)
+    num = int(list_1[0])
+    card_type = list_1[1]
+    if card_type == "b":
+        card_type = "Block"
+    elif card_type == "c":
+        card_type = "Champ"
+    elif card_type == "k":
+        card_type = "MedKit"
+    elif card_type == "p":
+        if num == 3:
+            card_type = "Lucky"
+        elif num == 5:
+            card_type = "Haymaker"
+        elif num == 15:
+            card_type = "Sucker"
+        else:
+            print("Something went wrong.")
+    else:
+        print("Something went wrong")
 
+    if card_type != "Sucker":
+        new_string = "%s - %s" % (card_type, num)
+    else:
+        new_string = "Sucker"
+
+    return(new_string)
+
+def update(pos_1, pos_2, list_1):
+    update_list = []
+    for i in range (0, 8):
+        update_list.append(0)
+    
+    value_1 = list_1[pos_1]
+    value_1 = value_1.split("-")
+    value_2 = list_1[pos_2]
+    value_2 = value_2.split("-")
+
+    if value_1 = "None":
+        print(None)
+    
+
+    
+    
 
 print("Welcome to Deck 'Em, a solitaire-style boxing game. Check it out on the App Store! ")
 print("")
@@ -50,6 +91,10 @@ for i in range (0, 4):
     round_list.append(x)
     x = convert(x)
     show_list.append(x)
+
+round_list.append(0)
+round_list.append(0)
+round_list.append("21-a")
 
 print(round_list)
 print(show_list)
